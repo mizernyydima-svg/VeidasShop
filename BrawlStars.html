@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Veidas Shop — Brawl Stars</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">Veidas</a>
+    <button id="theme-toggle" class="theme-btn" title="Сменить тему">☀️</button>
+  </header>
+
+  <main>
+    <h1>Brawl Stars</h1>
+    <div class="products-list">
+
+      <!-- Товар 1 -->
+      <article class="product-card">
+        <a href="https://brawlstars.com/skin-legendary" target="_blank" rel="noopener noreferrer" class="product-link">
+          <div class="product-info">
+            <h3 class="product-title">Аккаунты</h3>
+            <span class="product-price">Сейчас доступно <b>0</b> аккаунтов</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Товар 2 -->
+      <article class="product-card">
+        <a href="https://brawlstars.com/box-mega" target="_blank" rel="noopener noreferrer" class="product-link">
+          <div class="product-info">
+            <h3 class="product-title">Буст</h3>
+            <span class="product-price">Сейчас доступно <b>0</b> услуг буста</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Товар 3 -->
+      <article class="product-card">
+        <a href="https://brawlstars.com/coin-pack" target="_blank" rel="noopener noreferrer" class="product-link">
+          <div class="product-info">
+            <h3 class="product-title">Услуги</h3>
+            <span class="product-price">Сейчас доступно <b>0</b> услуг</span>
+          </div>
+        </a>
+      </article>
+
+      <!-- Товар 4 -->
+      <article class="product-card">
+        <a href="https://brawlstars.com/pin-pack" target="_blank" rel="noopener noreferrer" class="product-link">
+          <div class="product-info">
+            <h3 class="product-title">Пины</h3>
+            <span class="product-price">Сейчас доступно <b>0</b> услуг пинов</span>
+          </div>
+        </a>
+      </article>
+
+      </div>
+      </main>
+  <footer>
+    <p>&copy; 2024 Veidas Shop. Все права защищены.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('veidas-theme');
+    if (savedTheme === 'light') {
+      body.classList.add('light-theme');
+      toggle.textContent = '🌙';
+    }
+
+    toggle.addEventListener('click', () => {
+      body.classList.toggle('light-theme');
+
+      if (body.classList.contains('light-theme')) {
+        toggle.textContent = '🌙';
+        localStorage.setItem('veidas-theme', 'light');
+      } else {
+        toggle.textContent = '☀️';
+        localStorage.setItem('veidas-theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>
